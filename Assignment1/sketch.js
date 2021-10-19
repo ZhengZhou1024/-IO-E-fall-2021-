@@ -78,11 +78,11 @@ function setup() {
 
 
 osc1 = new p5.SinOsc();
-osc1.amp(.1);
+osc1.amp(.2);
 osc2 = new p5.SqrOsc();
-osc2.amp(.1); 
+osc2.amp(.3); 
 osc3 = new p5.SawOsc();
-osc3.amp(.1);  
+osc3.amp(.4);  
 
 fft = new p5.FFT();
 osc1.start();
@@ -165,7 +165,7 @@ function draw() {
   ellipse(100, 100, diameter0*100, diameter0*100);
   ellipseMode(RADIUS);    
   fill(0,255,0);
-  ellipse(200, 100, diameter1, diameter1);
+  ellipse(200, 100, diameter1,diameter1);
   ellipseMode(RADIUS);
   fill(0,0,255);
   ellipse(300, 100, diameter2, diameter2);
@@ -187,12 +187,14 @@ function draw() {
 
 function mouseClicked(){
   if (song.isPlaying()) {
-    // .isPlaying() returns a boolean
+    
     song.stop();
     background(255, 0, 0);
+     
   } else {
     song.play();
     background(0, 255, 0);
+      
   }
   };
   
